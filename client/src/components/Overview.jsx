@@ -39,17 +39,17 @@ class Overview extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${localhost}/reviews`, { params: { product_id: this.props.product_Id }})
-      .then(res => {
-        this.setState({numberOfReviews: res.data.results.length});
+    // axios.get(`${localhost}/reviews`, { params: { product_id: this.props.product_Id }})
+    //   .then(res => {
+    //     this.setState({numberOfReviews: res.data.results.length});
 
-        var sum = 0;
-        res.data.results.forEach(item => {
-          sum += item.rating;
-        });
-        var rating = sum / (res.data.results.length);
-        this.setState({rating: rating});
-      });
+    //     var sum = 0;
+    //     res.data.results.forEach(item => {
+    //       sum += item.rating;
+    //     });
+    //     var rating = sum / (res.data.results.length);
+    //     this.setState({rating: rating});
+    //   });
 
     axios.get(`${localhost}/products/${this.props.product_Id}`)
       .then(res => {
@@ -108,17 +108,17 @@ class Overview extends React.Component {
   }
 
   componentWillReceiveProps() {
-    axios.get(`${localhost}/reviews`, { params: { product_id: this.props.product_Id }})
-      .then(res => {
-        this.setState({numberOfReviews: res.data.results.length});
+    // axios.get(`${localhost}/reviews`, { params: { product_id: this.props.product_Id }})
+    //   .then(res => {
+    //     this.setState({numberOfReviews: res.data.results.length});
 
-        var sum = 0;
-        res.data.results.forEach(item => {
-          sum += item.rating;
-        });
-        var rating = sum / (res.data.results.length);
-        this.setState({rating: rating});
-      });
+    //     var sum = 0;
+    //     res.data.results.forEach(item => {
+    //       sum += item.rating;
+    //     });
+    //     var rating = sum / (res.data.results.length);
+    //     this.setState({rating: rating});
+    //   });
 
     axios.get(`${localhost}/products/${this.props.product_Id}`)
       .then(res => {

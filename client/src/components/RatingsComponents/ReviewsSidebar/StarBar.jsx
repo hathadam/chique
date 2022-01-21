@@ -6,7 +6,7 @@ function StarBar ({ratings, star}) {
   let bgc = '#124B3A';
   let starPercent;
   for (const key in ratings) {
-    total+= parseInt(ratings[key]);
+    total += parseInt(ratings[key]);
     if (key === star) {
       starCount = parseInt(ratings[key]);
     }
@@ -33,13 +33,13 @@ function StarBar ({ratings, star}) {
     backgroundColor: bgc,
     borderRadius: 'inherit',
 
-  }
+  };
 
   return (
     <div style={barStyles}>
       <div style={barFillerStyles}></div>
     </div>
-  )
+  );
 }
 
 export default StarBar;

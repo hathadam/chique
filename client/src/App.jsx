@@ -38,13 +38,16 @@ const findId = (element) => {
 
   return id;
 };
+
+const test = 1;
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product_Id: 40344,
+      product_Id: test,
       product_name: 'Camo Onesie',
-      outfit: [40344],
+      outfit: [test],
     };
     this.handleProductNameChange = this.handleProductNameChange.bind(this);
     this.relatedClickHandler = this.relatedClickHandler.bind(this);
@@ -87,8 +90,8 @@ class App extends React.Component {
       };
       // console.log('this is your click event', body);
 
-      axios.post(`${localhost}/interactions`, body)
-        .catch((err) => console.error('this is the interactions error', err));
+      // axios.post(`${localhost}/interactions`, body)
+      //   .catch((err) => console.error('this is the interactions error', err));
 
     });
 
@@ -99,7 +102,7 @@ class App extends React.Component {
           product_Id={this.state.product_Id}
           handleProductNameChange={this.handleProductNameChange}
         />
-        <Related
+        {/* <Related
           product_Id={this.state.product_Id}
           product_name={this.state.product_name}
           relatedClickHandler={this.relatedClickHandler}
@@ -113,7 +116,7 @@ class App extends React.Component {
         <Ratings
           product_Id={this.state.product_Id}
           productName={this.state.product_name}
-        />
+        /> */}
       </div>
     );
   }

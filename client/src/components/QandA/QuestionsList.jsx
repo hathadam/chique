@@ -86,7 +86,7 @@ class QuestionsList extends React.Component {
           {renderedQuestions.map((item, index) => {
             if (item.reported !== true) {
               return (
-                <div>
+                <div key = {index} >
                   <QuestionCard
                     answers={item.answers}
                     asker={item.asker_name}
